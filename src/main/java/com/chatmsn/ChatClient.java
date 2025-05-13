@@ -50,8 +50,15 @@ public class ChatClient {
                     while ((msg = serverIn.readLine()) != null) {
                         System.out.println(msg);
                     }
-                } catch (IOException ignored) {
-                    // Ignora exceções de I/O (por exemplo, servidor desconectado)
+
+                    // Se o loop terminar, significa que o servidor encerrou a conexão
+                    System.out.println("Conexão encerrada pelo servidor.");
+                } catch (IOException e) {
+                    // E, caso de erro, imprime mensagem de erro
+                    System.out.println("Conexão encerrada.");
+                } finally {
+                    // Encerra o cliente completamente
+                    System.exit(0);
                 }
             }).start();
 
