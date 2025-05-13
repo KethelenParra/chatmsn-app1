@@ -1,4 +1,4 @@
-package main.java.com.chatmsn;
+package com.chatmsn;
 
 import java.io.BufferedReader;
 import java.io.IOException;
